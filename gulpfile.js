@@ -23,7 +23,7 @@ var publishConfig = {
 gulp.task("package", function(){
   gulp.src('./src/**')
       .pipe(zip('iuap-design.war'))
-      .pipe(gulp.dest('.'));
+      .pipe(gulp.dest('./'));
 
   console.info('package ok!');
 });
