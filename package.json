@@ -1,0 +1,23 @@
+{
+  "name": "iuap-design-maven-project",
+  "version": "1.0.0",
+  "description": "iuap-design resource for maven",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuap-design/iuap-design-maven-project.git"
+  },
+  "author": "GuoYongfeng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iuap-design/iuap-design-maven-project/issues"
+  },
+  "homepage": "https://github.com/iuap-design/iuap-design-maven-project#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-zip": "^3.2.0"
+  }
+}
