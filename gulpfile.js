@@ -29,12 +29,12 @@ gulp.task("package", function(){
 });
 
 /**
- * 安装到maven中
+ * install 到本地
  * @param  {[type]} "install" [description]
  * @param  {[type]} function( [description]
  * @return {[type]}           [description]
  */
-gulp.task("deploy", ["package"], function(){
+gulp.task("install", ["package"], function(){
 
   var targetPath = fs.realpathSync('.');
 
@@ -60,4 +60,33 @@ gulp.task("deploy", ["package"], function(){
 
 });
 
-gulp.task('default', ['deploy']);
+/**
+ * 发布到maven仓库中
+ * @param  {[type]} "deploy"    [description]
+ * @param  {[type]} ["package"] [description]
+ * @param  {[type]} function(   [description]
+ * @return {[type]}             [description]
+ */
+gulp.task("deploy", ["install"], function(){
+  var targetPath = fs.realpathSync('.');
+
+  var publishCommandStr =  publishConfig.command + " deploy:deploy-file  -Dfile="+ targetPath+"/dist.war   -DgroupId="+ publishConfig.groupId +" -DartifactId="+ publishConfig.artifactId +"  -Dversion="+ publishConfig.version +" -Dpackaging=war  -DrepositoryId="+ publishConfig.repositoryId +" -Durl=" +publishConfig.repositoryURL;
+
+  console.info(publishCommandStr);
+
+  var publishWarProcess =	process.exec(publishCommandStr, function(err,stdout,stderr){
+    if(err) {
+      console.log('publish war error:'+stderr);
+    }
+  });
+
+  publishWarProcess.stdout.on('data',function(data){
+    console.info(data);
+  });
+  publishWarProcess.on('exit',function(data){
+    console.info('publish  war success');
+  });
+
+})
+
+gulp.task('default', [ 'deploy']);
