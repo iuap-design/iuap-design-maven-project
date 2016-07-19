@@ -11,7 +11,7 @@ var publishConfig = {
     repositoryURL: "http://172.16.51.12:8081/nexus/content/repositories/iUAP-Snapshots",
     artifactId: "iuap-design",
     groupId: "com.yonyou.iuap",
-    version: "3.0.6-SNAPSHOT"
+    version: "3.0.6-release"
 };
 
 /**
