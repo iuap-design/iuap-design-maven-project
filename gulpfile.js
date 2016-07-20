@@ -7,11 +7,11 @@ var fs = require('fs');
 // maven 配置信息
 var publishConfig = {
     command: "mvn",
-    repositoryId: "iUAP-Snapshots",
-    repositoryURL: "http://172.16.51.12:8081/nexus/content/repositories/iUAP-Snapshots",
+    repositoryId: "iUAP-Stagings",
+    repositoryURL: "http://172.16.51.12:8081/nexus/content/repositories/iUAP-Stagings",
     artifactId: "iuap-design",
     groupId: "com.yonyou.iuap",
-    version: "3.0.6-release"
+    version: "3.0.6"
 };
 
 /**
