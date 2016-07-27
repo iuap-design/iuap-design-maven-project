@@ -3,20 +3,5 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5" metadata-complete="true">
-	<display-name>uui1</display-name>
-
-	<filter>
-		<filter-name>HttpResponseFilter</filter-name>
-		<filter-class>
-			uap.web.http.ResponseHeaderFilter
-		</filter-class>
-		<init-param>
-			<param-name>Cache-Control</param-name>
-			<param-value>max-age=2592000</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>HttpResponseFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	<display-name>iuap-design</display-name>
 </web-app>
