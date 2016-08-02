@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="import" type="text/tangram" name="i-query" url="../project/libs/tangram/query" deps="knockout" />
+		<link rel="import" type="text/tangram" name="i-main" url="../project/libs/tangram/main" deps="knockout" />
+
+		<script type="text/javascript" src="../requirejs/require.debug.js"></script>
+		<script src="loader.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+			
+			<div style="float: left;width: 300px;height: 300px;border: 1px solid #000;">
+				<div style="margin-bottom: 20px;">
+					查询组件
+				</div>
+				
+				<i-query params = "{funcode:'code1'}"></i-query>		
+			</div>
+			<div style="margin-left:20px;border: 1px solid #000;float: left;width:300px;height: 300px;">
+				<div style="margin-bottom: 20px;">
+					主视图组件
+				</div>
+				<i-main></i-main>
+			</div>
+		
+		<!--<i-query params = "{funcode:'1001PSd'}"></i-query>-->
+		<!--<i-query params = "{funcode:'1001PSs'}"></i-query>-->
+		
+		
+	</body>
+
+</html>

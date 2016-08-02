@@ -1,18 +1,17 @@
-define( [
+define([
 	"./core",
 	"./selector",
 	"./traversing",
 	"./callbacks",
 	"./deferred",
-	"./deferred/exceptionHook",
 	"./core/ready",
+	"./support",
 	"./data",
 	"./queue",
 	"./queue/delay",
 	"./attributes",
 	"./event",
 	"./event/alias",
-	"./event/focusin",
 	"./manipulation",
 	"./manipulation/_evalUrl",
 	"./wrap",
@@ -30,11 +29,10 @@ define( [
 	"./offset",
 	"./dimensions",
 	"./deprecated",
-	"./exports/amd"
+	"./exports/amd",
+	"./exports/global"
 ], function( jQuery ) {
 
-"use strict";
+return jQuery;
 
-return ( window.jQuery = window.$ = jQuery );
-
-} );
+});
