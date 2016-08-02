@@ -1,0 +1,13 @@
+{
+  "name": "webuploader",
+  "homepage": "https://github.com/gmuteam/webuploader",
+  "_release": "3aca8ca142",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "3aca8ca14255c8bb2d46929bfe70dee44aca3365"
+  },
+  "_source": "https://github.com/gmuteam/webuploader.git",
+  "_target": "*",
+  "_originalSource": "webuploader"
+}

@@ -9,9 +9,9 @@ var publishConfig = {
     command: "mvn",
     repositoryId: "iUAP-Stagings",
     repositoryURL: "http://172.16.51.12:8081/nexus/content/repositories/iUAP-Stagings",
-    artifactId: "iuap-design",
+    artifactId: "iuap-design-vendor",
     groupId: "com.yonyou.iuap",
-    version: "3.0.6"
+    version: "3.0.0"
 };
 
 /**
@@ -21,8 +21,8 @@ var publishConfig = {
  * @return {[type]}           [description]
  */
 gulp.task("package", function(){
-  gulp.src('./src/**')
-      .pipe(zip('iuap-design.war'))
+  gulp.src('./dist/**')
+      .pipe(zip('iuap-design-vendor.war'))
       .pipe(gulp.dest('./'));
 
   console.info('package ok!');
