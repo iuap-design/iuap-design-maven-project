@@ -1,0 +1,26 @@
+{
+  "name": "iuap-design-vendor",
+  "description": "iuap-design resource for maven",
+  "main": "gulpfile.js",
+  "authors": [
+    "GuoYongfeng"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "verdor",
+    "resource"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
