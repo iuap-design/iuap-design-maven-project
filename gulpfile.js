@@ -21,11 +21,11 @@ var publishConfig = {
  * @return {[type]}           [description]
  */
 gulp.task("package", function(){
-  gulp.src('./dist/**')
+  return gulp.src('./dist/**')
       .pipe(zip('iuap-design-vendor.war'))
       .pipe(gulp.dest('./'));
 
-  console.info('package ok!');
+  // console.info('package ok!');
 });
 
 /**
@@ -41,7 +41,7 @@ gulp.task("install", ["package"], function(){
   // 安装命令
   var installCommandStr = publishConfig.command +
       " install:install-file -Dfile=" + targetPath +
-      "/iuap-design.war   -DgroupId="+ publishConfig.groupId +
+      "/iuap-design-vendor.war   -DgroupId="+ publishConfig.groupId +
       " -DartifactId=" + publishConfig.artifactId +
       "  -Dversion="+ publishConfig.version +" -Dpackaging=war";
 
@@ -70,7 +70,7 @@ gulp.task("install", ["package"], function(){
 gulp.task("deploy", ["install"], function(){
   var targetPath = fs.realpathSync('.');
 
-  var publishCommandStr =  publishConfig.command + " deploy:deploy-file  -Dfile="+ targetPath+"/iuap-design.war   -DgroupId="+ publishConfig.groupId +" -DartifactId="+ publishConfig.artifactId +"  -Dversion="+ publishConfig.version +" -Dpackaging=war  -DrepositoryId="+ publishConfig.repositoryId +" -Durl=" +publishConfig.repositoryURL;
+  var publishCommandStr =  publishConfig.command + " deploy:deploy-file  -Dfile="+ targetPath+"/iuap-design-vendor.war   -DgroupId="+ publishConfig.groupId +" -DartifactId="+ publishConfig.artifactId +"  -Dversion="+ publishConfig.version +" -Dpackaging=war  -DrepositoryId="+ publishConfig.repositoryId +" -Durl=" +publishConfig.repositoryURL;
 
   console.info(publishCommandStr);
 
