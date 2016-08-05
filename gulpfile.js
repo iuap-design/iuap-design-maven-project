@@ -9,9 +9,9 @@ var publishConfig = {
     command: "mvn",
     repositoryId: "iUAP-Stagings",
     repositoryURL: "http://172.16.51.12:8081/nexus/content/repositories/iUAP-Stagings",
-    artifactId: "iuap-design-vendor",
+    artifactId: "iuap-design",
     groupId: "com.yonyou.iuap",
-    version: "3.0.0"
+    version: "3.0.6"
 };
 
 /**
@@ -22,7 +22,7 @@ var publishConfig = {
  */
 gulp.task("package", function(){
   return gulp.src('./dist/**')
-      .pipe(zip('iuap-design-vendor.war'))
+      .pipe(zip('iuap-design.war'))
       .pipe(gulp.dest('./'));
 
   // console.info('package ok!');
@@ -41,7 +41,7 @@ gulp.task("install", ["package"], function(){
   // 安装命令
   var installCommandStr = publishConfig.command +
       " install:install-file -Dfile=" + targetPath +
-      "/iuap-design-vendor.war   -DgroupId="+ publishConfig.groupId +
+      "/iuap-design.war   -DgroupId="+ publishConfig.groupId +
       " -DartifactId=" + publishConfig.artifactId +
       "  -Dversion="+ publishConfig.version +" -Dpackaging=war";
 
@@ -70,7 +70,7 @@ gulp.task("install", ["package"], function(){
 gulp.task("deploy", ["install"], function(){
   var targetPath = fs.realpathSync('.');
 
-  var publishCommandStr =  publishConfig.command + " deploy:deploy-file  -Dfile="+ targetPath+"/iuap-design-vendor.war   -DgroupId="+ publishConfig.groupId +" -DartifactId="+ publishConfig.artifactId +"  -Dversion="+ publishConfig.version +" -Dpackaging=war  -DrepositoryId="+ publishConfig.repositoryId +" -Durl=" +publishConfig.repositoryURL;
+  var publishCommandStr =  publishConfig.command + " deploy:deploy-file  -Dfile="+ targetPath+"/iuap-design.war   -DgroupId="+ publishConfig.groupId +" -DartifactId="+ publishConfig.artifactId +"  -Dversion="+ publishConfig.version +" -Dpackaging=war  -DrepositoryId="+ publishConfig.repositoryId +" -Durl=" +publishConfig.repositoryURL;
 
   console.info(publishCommandStr);
 
